@@ -11,7 +11,7 @@
     <p>Заходи <a href=https://vk.com/app7246692>по ссылке</a> или сканируй QR</p>
   </div>
   
-
+*Презентация [тут](https://docs.google.com/presentation/d/1fhlumdq7UgGXnqjWt9aaGGA7nB_5uYsj1sWzztbp77g/edit?usp=sharing)*
 <div align="center">
     <img  src="./froReadme/Screenshot_12.png">
   <br>
