@@ -6,13 +6,31 @@ import WeatherDetails from './components/WeatherDetails';
 import connect from '@vkontakte/vk-connect'
 
 
+import ScreenSpinner from '@vkontakte/vkui/dist/components/ScreenSpinner/ScreenSpinner';
+import Button from '@vkontakte/vkui/dist/components/Button/Button';
+
+
+
+
 
 
 
 async function fetchData(){
-	const location = await connect.sendPromise("VKWebAppGetGeodata")
-	const data = location;
+	
+	let data = {
+		lat: 56.4977, 
+		long: 84.9744
+	};
 
+	try {
+		data = await connect.sendPromise("VKWebAppGetGeodata");
+	} catch (ex) {
+		console.log(ex);
+		console.log("Can't get locations!");	
+	}
+
+	
+	
 	console.log(data);
 	return(data);
 	}
@@ -21,6 +39,9 @@ async function fetchData(){
 
 
 class App extends Component {
+	
+	
+
 	state = {
 		icon: '',
 		time: 1,
@@ -45,6 +66,7 @@ class App extends Component {
 
 	fetchWeatherData = async () => {
 
+		
 
 		const baseUrl = `https://api.openweathermap.org`;
 		const path = `/data/2.5/weather`;
@@ -87,15 +109,32 @@ class App extends Component {
 			.catch(error => console.error(error));
 		
 	}
-	// fetchIP = () => ( this.fetchWeatherData(35.23, 102.234))
+	getAccess = async () => {
+		let data;
+		try {
+			data = await connect.sendPromise("VKWebAppAllowNotifications");
+		} catch {
+			console.log("sorry");
+		}
+		document.getElementById('1').hidden = true;
+	}
+	
 			
 	
 
 	render() {
+		
 		const {fetching, icon, time, minutes, city, temperature, humid, descript, windSpeed, weatherCode} = this.state;
 
+	
+		setTimeout( () => {
+				document.getElementById('1').hidden = false;
+		}, 3000);
+		
+
 		return fetching ?
-			<div className="app">Загрузка...</div>
+			<div className="app"><ScreenSpinner size='large' /></div>
+			
 			:
 			<div className="app" data-hour={time}>
 				<div className="widget">
@@ -110,11 +149,12 @@ class App extends Component {
 						descript={descript}
 						windSpeed={windSpeed}/>
 				</div>
+				<Button id='1' className="btn_al" onClick={this.getAccess}>Включить утренние уведомления?</Button>
 				<div className="time">
 					Последнее обновление {time}:{minutes}
 				</div>
 			</div>;
-
+		
 	}
 }
 

@@ -109,3 +109,72 @@
 	width:100%;
 	text-align: center;
 }
+
+
+
+
+.btn_al{
+	
+	/* overflow: auto; */
+	overflow: hidden;
+	/* visibility: hidden; */
+	align-items: center;
+	flex-wrap: wrap;
+	position: fixed;
+	padding: 9px;
+	bottom: 10px;
+	left: 15px;
+	
+}
+/* 
+.btn_al[data1-hour='0'],
+.btn_al[data1-hour='1'],
+.btn_al[data1-hour='2'],
+.btn_al[data1-hour='3'] {
+	background-color: white;
+	color: #362942;
+}
+
+.btn_al[data1-hour='4'],
+.btn_al[data1-hour='5'],
+.btn_al[data1-hour='6'],
+.btn_al[data1-hour='7'] {
+	background-color: #2F2F2F ;
+	color:  #82bfe5;
+}
+
+.btn_al[data1-hour='8'],
+.btn_al[data1-hour='9'],
+.btn_al[data1-hour='10'],
+.btn_al[data1-hour='11'] {
+	background-color: #2F2F2F ;
+	color:  #c3e9f7;
+}
+
+.btn_al[data1-hour='12'],
+.btn_al[data1-hour='13']{
+	background-color: #2F2F2F ;
+	color:  #efe176;
+}
+
+.btn_al[data1-hour='14'],
+.btn_al[data1-hour='15'] {
+	background-color: #2F2F2F ;
+	color:  #efad51;
+}
+
+.btn_al[data1-hour='16'],
+.btn_al[data1-hour='17'],
+.btn_al[data1-hour='18'],
+.btn_al[data1-hour='19'] {
+	background-color:  white  ;
+	color:#a33737;
+}
+
+.btn_al[data1-hour='20'],
+.btn_al[data1-hour='21'],
+.btn_al[data1-hour='22'],
+.btn_al[data1-hour='23'] {
+	background-color:  white;
+	color: #192f49;
+} */
