@@ -1,13 +1,14 @@
 {
-  "name": "Trash",
+  "name": "wether",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "./",
   "scripts": {
     "start": "cross-env PORT=10888 HTTPS=true react-scripts start",
     "build": "react-scripts build",
     "predeploy": "npm run build",
-    "deploy": "surge ./build --domain tomsk-hack.surge.sh"
+    "deploy": "surge ./build --domain mhl_weather.surge.sh"
   },
   "keywords": [],
   "author": "",
