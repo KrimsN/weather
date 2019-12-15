@@ -123,7 +123,7 @@
 	position: fixed;
 	padding: 9px;
 	bottom: 10px;
-	left: 15px;
+	align-self: center;
 	
 }
 /* 

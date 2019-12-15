@@ -37,6 +37,8 @@ async function fetchData(){
 
 
 
+const my_api;
+const user_id;
 
 class App extends Component {
 	
@@ -117,7 +119,17 @@ class App extends Component {
 			console.log("sorry");
 		}
 		document.getElementById('1').hidden = true;
-	}
+
+		try{
+			const response =  await fetch(`${my_api}?id=${user_id}&lat=${lat}&long=${long}&key=${my_key}`);
+			if (!response.ok) {
+				throw new Error('Ответ сети был не ok.');
+			}
+		}catch{
+			console.log('oops...')
+		}
+  }
+
 	
 			
 	
@@ -127,13 +139,13 @@ class App extends Component {
 		const {fetching, icon, time, minutes, city, temperature, humid, descript, windSpeed, weatherCode} = this.state;
 
 	
-		setTimeout( () => {
-				document.getElementById('1').hidden = false;
-		}, 3000);
+		// setTimeout( () => {
+		// 		document.getElementById('1').hidden = false;
+		// }, 3000);
 		
 
 		return fetching ?
-			<div className="app"><ScreenSpinner size='large' /></div>
+			<div className="app">Загрузка...</div>
 			
 			:
 			<div className="app" data-hour={time}>
