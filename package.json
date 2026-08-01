@@ -17,10 +17,10 @@
     "@vkontakte/vk-miniapps-deploy": "0.0.10",
     "cross-env": "^5.2.0",
     "react-hot-loader": "^4.9.0",
-    "react-scripts": "^3.3.0"
+    "react-scripts": "^5.0.1"
   },
   "dependencies": {
-    "@vkontakte/icons": "^1.10.0",
+    "@vkontakte/icons": "^3.64.1",
     "@vkontakte/vk-connect": "^1.6.12",
     "@vkontakte/vkui": "^2.30.7",
     "babel-eslint": "^10.0.3",
